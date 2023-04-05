@@ -16,8 +16,8 @@ function App() {
             economic growth.
           </p>
         </section>
-        <section className="py-10 grid grid-cols-3 gap-10">
-          <a href="#0" className="bg-green-400">
+        <section className="py-10 grid grid-cols-4 gap-10">
+          <a href="#0" className="bg-green-400 h-96">
             <div>
               <img src="" />
             </div>
@@ -35,7 +35,7 @@ function App() {
               </div>
             </div>
           </a>
-          <a href="#0" className="bg-green-400">
+          <a href="#0" className="bg-green-400 h-96">
             <div>
               <img src="" />
             </div>
@@ -53,7 +53,7 @@ function App() {
               </div>
             </div>
           </a>
-          <a href="#0" className="bg-green-400">
+          <a href="#0" className="bg-green-400 h-96">
             <div>
               <img src="" />
             </div>
@@ -71,7 +71,7 @@ function App() {
               </div>
             </div>
           </a>
-          <a href="#0" className="bg-green-400">
+          <a href="#0" className="bg-green-400 h-96">
             <div>
               <img src="" />
             </div>
@@ -89,7 +89,7 @@ function App() {
               </div>
             </div>
           </a>
-          <a href="#0" className="bg-green-400">
+          <a href="#0" className="bg-green-400 h-96">
             <div>
               <img src="" />
             </div>
@@ -107,7 +107,7 @@ function App() {
               </div>
             </div>
           </a>
-          <a href="#0" className="bg-green-400">
+          <a href="#0" className="bg-green-400 h-96">
             <div>
               <img src="" />
             </div>
