@@ -1,11 +1,8 @@
-/** 20230405223202
-https://newsapi.org/v2/everything?q=tesla&from=2023-03-05&sortBy=publishedAt&apiKey=88c7521214df4a8ebcd720abc432ea7a
-**/
+import nextId from "react-id-generator";
+import ItemArticle from "./ItemArticle";
 
-export const baseArticles = {
-  status: "ok",
-  totalResults: 12141,
-  articles: [
+function ArticleList() {
+  const articles = [
     {
       source: {
         id: null,
@@ -1622,5 +1619,34 @@ export const baseArticles = {
       content:
         "DETROIT General Motors pulled ahead of Ford Motor to become the country's second best-seller of all-electric vehicles during the first quarter, trailing only industry leader Tesla .GM on Monday said … [+319 chars]",
     },
-  ],
-};
+  ];
+
+  const articleWithId = articles.map((x) => {
+    return {
+      _id: nextId("article-numero-"),
+      source: x?.source,
+      author: x?.author,
+      title: x?.title,
+      description: x?.description,
+      url: x?.url,
+      urlToImage: x?.urlToImage,
+      publishedAt: x?.publishedAt,
+      content: x?.content,
+    };
+  });
+
+  console.log(articleWithId);
+
+  return (
+    <>
+      <section className="py-10 grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-10">
+        {articleWithId &&
+          articleWithId.map((item) => {
+            return <ItemArticle article={item} />;
+          })}
+      </section>
+    </>
+  );
+}
+
+export default ArticleList;

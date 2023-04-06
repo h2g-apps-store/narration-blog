@@ -1,12 +1,13 @@
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import ArticleList from "./components/articles/ArticleList";
 
 function App() {
   return (
     <div className="flex flex-col min-h-screen justify-between bg-gray-100">
       <Header />
-      <main className="mb-auto px-40">
-        <section className="flex bg-green-400 flex-col justify-center items-center py-20">
+      <main className="mb-auto px-40 ">
+        <section className="flex bg-green-400 mt-10 flex-col justify-center items-center py-20">
           <h1 className="text-6xl font-bold">
             We invest in the world’s potential
           </h1>
@@ -16,116 +17,7 @@ function App() {
             economic growth.
           </p>
         </section>
-        <section className="py-10 grid grid-cols-4 gap-10">
-          <a href="#0" className="bg-green-400 h-96">
-            <div>
-              <img src="" />
-            </div>
-            <div>
-              <div>
-                <div>date</div>
-                <div>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
-                  quas autem facilis
-                </div>
-              </div>
-              <div>
-                <div>Icon Athors</div>
-                <div>name Authores</div>
-              </div>
-            </div>
-          </a>
-          <a href="#0" className="bg-green-400 h-96">
-            <div>
-              <img src="" />
-            </div>
-            <div>
-              <div>
-                <div>date</div>
-                <div>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
-                  quas autem facilis quas autem facilis quas autem facilis
-                </div>
-              </div>
-              <div>
-                <div>Icon Athors</div>
-                <div>name Authores</div>
-              </div>
-            </div>
-          </a>
-          <a href="#0" className="bg-green-400 h-96">
-            <div>
-              <img src="" />
-            </div>
-            <div>
-              <div>
-                <div>date</div>
-                <div>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
-                  quas autem facilis
-                </div>
-              </div>
-              <div>
-                <div>Icon Athors</div>
-                <div>name Authores</div>
-              </div>
-            </div>
-          </a>
-          <a href="#0" className="bg-green-400 h-96">
-            <div>
-              <img src="" />
-            </div>
-            <div>
-              <div>
-                <div>date</div>
-                <div>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
-                  quas autem facilis
-                </div>
-              </div>
-              <div>
-                <div>Icon Athors</div>
-                <div>name Authores</div>
-              </div>
-            </div>
-          </a>
-          <a href="#0" className="bg-green-400 h-96">
-            <div>
-              <img src="" />
-            </div>
-            <div>
-              <div>
-                <div>date</div>
-                <div>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
-                  quas autem facilis
-                </div>
-              </div>
-              <div>
-                <div>Icon Athors</div>
-                <div>name Authores</div>
-              </div>
-            </div>
-          </a>
-          <a href="#0" className="bg-green-400 h-96">
-            <div>
-              <img src="" />
-            </div>
-            <div>
-              <div>
-                <div>date</div>
-                <div>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
-                  quas autem facilis
-                </div>
-              </div>
-              <div>
-                <div>Icon Athors</div>
-                <div>name Authores</div>
-              </div>
-            </div>
-          </a>
-        </section>
+        <ArticleList />
       </main>
       <Footer />
     </div>
