@@ -28,11 +28,9 @@ function Footer() {
           <div>
             <h1 className="my-2 text-xl font-bold">RESOURCES</h1>
             <ul className="space-y-1">
-              <li>un</li>
-              <li>Deus</li>
-              <li>trois</li>
-              <li>Quatres</li>
-              <li>Cinq</li>
+              <li>React Js</li>
+              <li>Vite JS</li>
+              <li>Tailwind CSS</li>
             </ul>
           </div>
           <div>

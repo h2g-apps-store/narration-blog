@@ -6,7 +6,7 @@ function ItemArticle({ article }) {
   return (
     <Link
       key={article?._id}
-      to={article?._id}
+      to={`article/${article?._id}`}
       className="bg-white rounded-md h-auto"
     >
       <div className="cursor-pointer">

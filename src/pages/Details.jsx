@@ -1,7 +1,9 @@
-import usePagination from "../../hooks/usePaginnation";
-import ItemArticle from "./ItemArticle";
+import React from "react";
+import { useParams } from "react-router-dom";
 
-function ArticleList() {
+function Details() {
+  const { id } = useParams();
+
   const data = [
     {
       _id: "article-numero-2001",
@@ -1721,50 +1723,41 @@ function ArticleList() {
     },
   ];
 
-  const itemsPerPage = 12;
-  const { currentData, currentPage, pages, nextPage, prevPage, goToPage } =
-    usePagination(data, itemsPerPage);
+  const currentArticles = data.filter((item) => {
+    return item?._id === id;
+  })[0];
 
   return (
     <>
-      <section className="py-10 grid sx:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-10">
-        {currentData &&
-          currentData.map((item) => {
-            return <ItemArticle article={item} />;
-          })}
+      <section className="flex rounded-md shadow-xs xl:mt-10 flex-col justify-center items-center border border-gray-300    ">
+        <img
+          src={`${currentArticles.urlToImage}`}
+          alt={currentArticles?.title}
+          className="w-full h-full"
+        />
       </section>
-      <div className="flex items-center justify-center mb-5">
-        {/* Afficher les boutons de pagination */}
-        <button
-          className="bg-gray-50 border border-blue-400 hover:bg-blue-200 cursor-pointer sm:p-2 p-1"
-          onClick={prevPage}
-          disabled={currentPage === 1}
-        >
-          Précédent
-        </button>
-        {Array.from({ length: pages }, (_, i) => (
-          <button
-            className={
-              currentPage === i + 1
-                ? "bg-blue-500 border border-blue-400 hover:bg-blue-200 cursor-pointer sm:p-2 p-1"
-                : "bg-gray-50 border border-blue-400 hover:bg-blue-200 cursor-pointer sm:p-2 p-1"
-            }
-            key={i}
-            onClick={() => goToPage(i + 1)}
-          >
-            {i + 1}
-          </button>
-        ))}
-        <button
-          className="bg-gray-50 border border-blue-400 hover:bg-blue-200 cursor-pointer sm:p-2 p-1"
-          onClick={nextPage}
-          disabled={currentPage === pages}
-        >
-          Suivant
-        </button>
-      </div>
+
+      <h1 className=" text-xl sm:text-5xl md:6xl lg:text-4xl xl:text-6xl  text-center font-bold my-5  text-gray-700 dark:text-gray-100">
+        {currentArticles?.title}
+      </h1>
+
+      <section className="my-10">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis totam
+        quos, dicta neque sint beatae tempore facere ipsam voluptates molestiae
+        dolorem architecto natus cupiditate eligendi dolore similique illo eaque
+        est. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis
+        totam quos, dicta neque sint beatae tempore facere ipsam voluptates
+        molestiae dolorem architecto natus cupiditate eligendi dolore similique
+        illo eaque est. Lorem ipsum, dolor sit amet consectetur adipisicing
+        elit. Omnis totam quos, dicta neque sint beatae tempore facere ipsam
+        voluptates molestiae dolorem architecto natus cupiditate eligendi dolore
+        similique illo eaque est. Lorem ipsum, dolor sit amet consectetur
+        adipisicing elit. Omnis totam quos, dicta neque sint beatae tempore
+        facere ipsam voluptates molestiae dolorem architecto natus cupiditate
+        eligendi dolore similique illo eaque est.
+      </section>
     </>
   );
 }
 
-export default ArticleList;
+export default Details;
