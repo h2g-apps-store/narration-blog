@@ -2,11 +2,27 @@ function Footer() {
   return (
     <div className=" bg-gray-900 px-10 xl:px-40  text-white py-10">
       <div className="flex flex-col xl:flex-row justify-between items-center gap-10 xl:gap-32">
-        <div className="w-full xl:w-[800px] ">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe
-          dolorem, quas molestiae cupiditate, perferendis iste maxime dolorum
-          quod est esse dolore culpa recusandae accusantium ratione doloremque
-          ipsa voluptatem adipisci consequatur?
+        <div className="w-full xl:w-[800px] flex flex-col justify-between gap-5">
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe
+            dolorem, quas molestiae cupiditate, perferendis iste maxime dolorum
+            quod
+          </p>
+          <form action="#0">
+            <div className="flex">
+              <input
+                type="email"
+                className="outline-none p-2 text-gray-900 w-full"
+                placeholder="votre adresse email"
+              />
+              <button
+                type="submit"
+                className="bg-blue-600 px-2 hover:bg-blue-500 cursor-pointer active:bg-blue-700"
+              >
+                S'abonnez
+              </button>
+            </div>
+          </form>
         </div>
         <div className=" w-full flex flex-col sm:flex-row md:flex-row lg:flex-row xl:flex-row gap-5 justify-between">
           <div>
@@ -54,9 +70,7 @@ function Footer() {
 
       <hr className="my-10" />
       <div className="flex justify-center items-center">
-        <p className="text-center">
-          © 2023 herman2geku is a registered trademark. All Rights Reserved.
-        </p>
+        <p className="text-center">© 2023 herman2geku. All Rights Reserved.</p>
       </div>
     </div>
   );

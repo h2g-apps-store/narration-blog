@@ -1,4 +1,5 @@
 import nextId from "react-id-generator";
+import usePagination from "../../hooks/usePaginnation";
 import ItemArticle from "./ItemArticle";
 
 function ArticleList() {
@@ -1635,16 +1636,44 @@ function ArticleList() {
     };
   });
 
-  console.log(articleWithId);
+  const itemsPerPage = 12;
+  const { currentData, currentPage, pages, nextPage, prevPage, goToPage } =
+    usePagination(articleWithId, itemsPerPage);
 
   return (
     <>
-      <section className="py-10 grid sx:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
-        {articleWithId &&
-          articleWithId.map((item) => {
+      <section className="py-10 grid sx:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-10">
+        {currentData &&
+          currentData.map((item) => {
             return <ItemArticle article={item} />;
           })}
       </section>
+      <div className="flex items-center justify-center mb-5">
+        {/* Afficher les boutons de pagination */}
+        <button
+          className="bg-gray-50 border border-blue-400 hover:bg-blue-200 cursor-pointer sm:p-2 p-1"
+          onClick={prevPage}
+          disabled={currentPage === 1}
+        >
+          Précédent
+        </button>
+        {Array.from({ length: pages }, (_, i) => (
+          <button
+            className="bg-gray-50 border border-blue-400 hover:bg-blue-200 cursor-pointer sm:p-2 p-1"
+            key={i}
+            onClick={() => goToPage(i + 1)}
+          >
+            {i + 1}
+          </button>
+        ))}
+        <button
+          className="bg-gray-50 border border-blue-400 hover:bg-blue-200 cursor-pointer sm:p-2 p-1"
+          onClick={nextPage}
+          disabled={currentPage === pages}
+        >
+          Suivant
+        </button>
+      </div>
     </>
   );
 }
