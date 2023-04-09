@@ -9,3 +9,10 @@ export const formatDate = (date) => {
 
   return [year, month, day].join("-");
 };
+
+export const formatDateTime = (x) => {
+  return new Intl.DateTimeFormat("fr-FR", {
+    dateStyle: "medium",
+    timeStyle: "medium",
+  }).format(new Date(x));
+};

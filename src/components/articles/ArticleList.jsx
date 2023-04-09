@@ -1733,7 +1733,7 @@ function ArticleList() {
             return <ItemArticle article={item} />;
           })}
       </section>
-      <div className="flex items-center justify-center mb-5">
+      <div className="flex items-center xs:gap-3 sm:gap-4 justify-center mb-5">
         {/* Afficher les boutons de pagination */}
         <button
           className="bg-gray-50 border border-blue-400 hover:bg-blue-200 cursor-pointer sm:p-2 p-1"

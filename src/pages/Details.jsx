@@ -1,5 +1,7 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { HiOutlineUserCircle } from "react-icons/hi";
+import { Link, useParams } from "react-router-dom";
+import { formatDateTime } from "../utils/moments";
 
 function Details() {
   const { id } = useParams();
@@ -1741,20 +1743,55 @@ function Details() {
         {currentArticles?.title}
       </h1>
 
+      <div className="flex justify-between flex-col items-center sm:flex-row ">
+        <h1 className="text-xl font-light text-gray-500 dark:text-gray-100">
+          {currentArticles?.publishedAt
+            ? formatDateTime(currentArticles?.publishedAt)
+            : null}
+        </h1>
+        <div className=" mb-0 flex items-center gap-2">
+          <div>
+            <HiOutlineUserCircle size={20} color="gray" />
+          </div>
+          <div className="text-blue-500">
+            {currentArticles?.author ? currentArticles?.author : "author"}
+          </div>
+        </div>
+      </div>
+
       <section className="my-10">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis totam
-        quos, dicta neque sint beatae tempore facere ipsam voluptates molestiae
-        dolorem architecto natus cupiditate eligendi dolore similique illo eaque
-        est. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis
-        totam quos, dicta neque sint beatae tempore facere ipsam voluptates
-        molestiae dolorem architecto natus cupiditate eligendi dolore similique
-        illo eaque est. Lorem ipsum, dolor sit amet consectetur adipisicing
-        elit. Omnis totam quos, dicta neque sint beatae tempore facere ipsam
-        voluptates molestiae dolorem architecto natus cupiditate eligendi dolore
-        similique illo eaque est. Lorem ipsum, dolor sit amet consectetur
-        adipisicing elit. Omnis totam quos, dicta neque sint beatae tempore
-        facere ipsam voluptates molestiae dolorem architecto natus cupiditate
-        eligendi dolore similique illo eaque est.
+        {currentArticles?.description ? (
+          <p className="dark:text-white">{currentArticles?.description}</p>
+        ) : null}
+
+        {currentArticles?.content ? (
+          <p className="dark:text-white">{currentArticles?.content}</p>
+        ) : null}
+        {currentArticles?.content ? (
+          <p className="dark:text-white">{currentArticles?.content}</p>
+        ) : null}
+        {currentArticles?.content ? (
+          <p className="dark:text-white">{currentArticles?.content}</p>
+        ) : null}
+        {currentArticles?.content ? (
+          <p className="dark:text-white">{currentArticles?.content}</p>
+        ) : null}
+        {currentArticles?.content ? (
+          <p className="dark:text-white">{currentArticles?.content}</p>
+        ) : null}
+      </section>
+
+      <section className="mb-5">
+        <div className=" mb-0 flex items-center gap-2">
+          <div className="dark:text-white">Source :</div>
+          <Link
+            to={currentArticles?.url}
+            target="_blank"
+            className="text-blue-500"
+          >
+            {currentArticles?.source ? currentArticles?.source?.name : "author"}
+          </Link>
+        </div>
       </section>
     </>
   );
